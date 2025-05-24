@@ -1,5 +1,5 @@
 exports.createDropdown = function (dropdownMenu) {
-	const content = dropdownMenu.querySelectorAll("*");
+	const content = dropdownMenu.children;
 
 	const show = function () {
 		for (const elem in content) {
