@@ -20,18 +20,18 @@ exports.createDropdown = function (dropdownMenu) {
 				value.contains(event.target);
 			})
 		) {
-			this.hide();
+			hide();
 			document.removeEventListener("keydown", onClickOutside);
 		}
 	};
 
 	dropdownMenu.addEventListener("click", () => {
-		this.show();
+		show();
 	});
 
 	document.addEventListener("click", onClickOutside);
 
-	this.hide();
+	hide();
 
 	return { show, hide };
 };
