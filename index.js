@@ -1,5 +1,5 @@
-exports.createDropdown = function (dropdownMenu) {
-	const content = [...dropdownMenu.children];
+exports.createDropdown = function (dropdownMenu, menuContent) {
+	const content = [...menuContent.children];
 
 	const show = function () {
 		for (const elem in content) {
