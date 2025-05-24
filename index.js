@@ -2,15 +2,15 @@ exports.createDropdown = function (dropdownMenu, menuContent) {
 	const content = [...menuContent.children];
 
 	const show = function () {
-		for (const elem in content) {
-			elem.style.visibility = "visible";
-		}
+		content.forEach((value) => {
+			value.style.visibility = "visible";
+		});
 	};
 
 	const hide = function () {
-		for (const elem in content) {
-			elem.style.visibility = "collapse";
-		}
+		content.forEach((value) => {
+			value.style.visibility = "collapse";
+		});
 	};
 
 	const onClickOutside = function (event) {

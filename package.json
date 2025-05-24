@@ -1,6 +1,6 @@
 {
 	"name": "@eleadn/dynamic-ui",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"description": "A package containing modules to create dynamic ui",
 	"main": "index.js",
 	"scripts": {
