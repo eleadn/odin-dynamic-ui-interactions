@@ -1,0 +1,26 @@
+{
+  "name": "@eleadn/dynamic-ui",
+  "version": "1.0.0",
+  "description": "A package containing modules to create dynamic ui",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eleadn/odin-dynamic-ui-interactions.git"
+  },
+  "author": "DI NOTO Eleanore <eleano.dn@gmail.com> (https://github.com/eleadn)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eleadn/odin-dynamic-ui-interactions/issues"
+  },
+  "homepage": "https://github.com/eleadn/odin-dynamic-ui-interactions#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.27.0",
+    "@eslint/markdown": "^6.4.0",
+    "eslint": "^9.27.0",
+    "globals": "^16.1.0",
+    "prettier": "3.5.3"
+  }
+}
