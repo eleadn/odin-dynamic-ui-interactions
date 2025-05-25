@@ -111,7 +111,8 @@ exports.createCarousel = function (
 
 	for (let i = 0; i < dots.length; ++i) {
 		dots[i].addEventListener("click", () => {
-			setPosition(i);
+			const dotIndex = i;
+			setPosition(dotIndex);
 		});
 	}
 
