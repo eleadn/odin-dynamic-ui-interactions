@@ -110,9 +110,9 @@ exports.createCarousel = function (
 	});
 
 	for (let i = 0; i < dots.length; ++i) {
-		const dotIndex = i;
-		dots[i].addEventListener("click", () => {
-			setPosition(dotIndex);
+		dots[i].dataset.index = i;
+		dots[i].addEventListener("click", (e) => {
+			setPosition(e.target.dataset.index);
 		});
 	}
 
