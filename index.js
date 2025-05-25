@@ -46,13 +46,24 @@ exports.createCarousel = function (
 	const images = [...imageContainer.children];
 	let index = 0;
 
+	const computePosition = function () {
+		let position = 0;
+
+		for (let i = 0; i < index; ++i) {
+			position -= images[i].style.width;
+		}
+
+		return position;
+	};
+
 	const moveRight = function () {
 		++index;
 		if (index >= images.length) {
 			index = 0;
 		}
 
-		imageContainer.style.left = `${index * 400}px`;
+		const position = computePosition();
+		imageContainer.style.left = `${position}px`;
 	};
 
 	return { moveRight };
