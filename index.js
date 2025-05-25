@@ -37,7 +37,6 @@ exports.createDropdown = function (dropdownMenu, menuContent) {
 };
 
 exports.createCarousel = function (
-	display,
 	imageContainer,
 	leftButton,
 	rightButton,
@@ -50,10 +49,18 @@ exports.createCarousel = function (
 		let position = 0;
 
 		for (let i = 0; i < index; ++i) {
-			position -= images[i].style.width;
+			position -= images[i].width;
 		}
 
-		return position;
+		imageContainer.style.left = `${position}px`;
+	};
+
+	const moveLeft = function () {
+		--index;
+		if (index < 0) {
+			index = images.length - 1;
+		}
+		computePosition();
 	};
 
 	const moveRight = function () {
@@ -61,10 +68,15 @@ exports.createCarousel = function (
 		if (index >= images.length) {
 			index = 0;
 		}
-
-		const position = computePosition();
-		imageContainer.style.left = `${position}px`;
+		computePosition();
 	};
 
-	return { moveRight };
+	leftButton.addEventListener("click", () => {
+		moveLeft();
+	});
+	rightButton.addEventListener("click", () => {
+		moveRight();
+	});
+
+	return { moveLeft, moveRight };
 };
