@@ -43,6 +43,7 @@ exports.createCarousel = function (
 	dotContainer = []
 ) {
 	const images = [...imageContainer.children];
+	const dots = [...dotContainer.children];
 	let index = 0;
 
 	const computePosition = function () {
@@ -55,19 +56,37 @@ exports.createCarousel = function (
 		imageContainer.style.left = `${position}px`;
 	};
 
+	const removeDotSelection = function () {
+		if (dots.length <= index) {
+			return;
+		}
+		dots[index].classList.remove("carousel-dot-selected");
+	};
+
+	const addDotSelection = function () {
+		if (dots.length <= index) {
+			return;
+		}
+		dots[index].classList.add("carousel-dot-selected");
+	};
+
 	const moveLeft = function () {
+		removeDotSelection();
 		--index;
 		if (index < 0) {
 			index = images.length - 1;
 		}
+		addDotSelection();
 		computePosition();
 	};
 
 	const moveRight = function () {
+		removeDotSelection();
 		++index;
 		if (index >= images.length) {
 			index = 0;
 		}
+		addDotSelection();
 		computePosition();
 	};
 
