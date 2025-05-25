@@ -97,5 +97,7 @@ exports.createCarousel = function (
 		moveRight();
 	});
 
+	addDotSelection();
+
 	return { moveLeft, moveRight };
 };
