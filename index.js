@@ -70,6 +70,18 @@ exports.createCarousel = function (
 		dots[index].classList.add("carousel-dot-selected");
 	};
 
+	const setPosition = function (newIndex) {
+		removeDotSelection();
+		index = newIndex;
+		if (index < 0) {
+			index = images.length - 1;
+		} else {
+			index = 0;
+		}
+		addDotSelection();
+		computePosition();
+	};
+
 	const moveLeft = function () {
 		removeDotSelection();
 		--index;
@@ -97,7 +109,13 @@ exports.createCarousel = function (
 		moveRight();
 	});
 
+	for (let i = 0; i < dots.length; ++i) {
+		dots[i].addEventListener("click", () => {
+			setPosition(i);
+		});
+	}
+
 	addDotSelection();
 
-	return { moveLeft, moveRight };
+	return { moveLeft, moveRight, setPosition };
 };
