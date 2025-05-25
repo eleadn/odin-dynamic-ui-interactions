@@ -75,7 +75,7 @@ exports.createCarousel = function (
 		index = newIndex;
 		if (index < 0) {
 			index = images.length - 1;
-		} else {
+		} else if (index >= images.length) {
 			index = 0;
 		}
 		addDotSelection();
