@@ -35,3 +35,25 @@ exports.createDropdown = function (dropdownMenu, menuContent) {
 
 	return { show, hide };
 };
+
+exports.createCarousel = function (
+	display,
+	imageContainer,
+	leftButton,
+	rightButton,
+	dotContainer = []
+) {
+	const images = [...imageContainer.children];
+	let index = 0;
+
+	const moveRight = function () {
+		++index;
+		if (index >= images.length) {
+			index = 0;
+		}
+
+		imageContainer.style.left = `${index * 400}px`;
+	};
+
+	return { moveRight };
+};
